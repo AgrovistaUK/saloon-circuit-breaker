@@ -35,15 +35,15 @@ it('circuit breaker configuration properly merges default and custom values', fu
     expect($merged->success_threshold)->toBe(3);
 });
 
-it('circuit breaker validates that service name is provided during initialization', function () {
-    expect(function () {
-        $connector = new BasicTestConnector();
-        $connector->withCircuitBreaker([
-            'failure_threshold' => 3,
-            'success_threshold' => 2,
-            'timeout' => 300,
-        ]);
-    })->toThrow(InvalidArgumentException::class);
+it('circuit breaker uses default service name when not provided', function () {
+    $connector = new BasicTestConnector();
+    $connector->withCircuitBreaker([
+        'failure_threshold' => 3,
+        'success_threshold' => 2,
+        'timeout' => 300,
+    ]);
+    $circuitBreaker = $connector->getCircuitBreaker();
+    expect($circuitBreaker->getService())->toBe('basic_test_connector');
 });
 
 it('status command shows no circuit breakers when none are registered', function () {

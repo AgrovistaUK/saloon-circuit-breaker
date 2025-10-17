@@ -20,7 +20,7 @@ composer require agrovistauk/saloon-circuit-breaker
 
 ## Quick Start
 
-> **Note:** Each circuit breaker requires a unique `service` name in the configuration to track state independently.
+> **Note:** Each circuit breaker should have a unique service name so its state can be tracked independently. If you don’t specify one, it will be automatically generated from the connector’s class name (converted to snake_case).
 
 **Add the trait to your Saloon Connector:**
 
@@ -35,13 +35,14 @@ class MyAPIConnector extends Connector
     public function __construct()
     {
         $this->withCircuitBreaker([
-            'service' => 'my_api',
             'failure_threshold' => 3,
             'timeout' => 600,
         ]);
     }
 }
 ```
+
+The service name will automatically be derived from the connector’s class name (e.g., a class `MyApiConnector` becomes `'my_api_connector'`). You can override it by explicitly setting `'service' => 'custom_name'`.
 
 ## Circuit Breaker States
 
@@ -69,7 +70,7 @@ All configuration is done directly in your connector. The following options are 
 
 ```php
 $this->withCircuitBreaker([
-    'service' => 'my_api',
+    'service' => 'auto-detected', // Optional: auto-detected from class name if not provided
     'failure_threshold' => 5,
     'success_threshold' => 3,
     'timeout' => 60,
@@ -83,7 +84,17 @@ $this->withCircuitBreaker([
 
 ```php
 $this->withCircuitBreaker([
-    'service' => 'my_api',
+    'failure_threshold' => 3,
+    'success_threshold' => 2,
+    'timeout' => 300,
+]);
+```
+
+Or with explicit service name:
+
+```php
+$this->withCircuitBreaker([
+    'service' => 'my_custom_service',
     'failure_threshold' => 3,
     'success_threshold' => 2,
     'timeout' => 300,

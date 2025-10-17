@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace AgrovistaUK\SaloonCircuitBreaker;
 
-use InvalidArgumentException;
 use RuntimeException;
 use Saloon\Http\Response;
 use Saloon\Http\PendingRequest;
+use Illuminate\Support\Str;
 use AgrovistaUK\SaloonCircuitBreaker\Data\CircuitBreakerConfigData;
 use AgrovistaUK\SaloonCircuitBreaker\Exceptions\CircuitOpenException;
 use AgrovistaUK\SaloonCircuitBreaker\Enums\CircuitBreakerStateEnum;
@@ -55,7 +55,9 @@ trait CircuitBreakerPlugin
 
     public function withCircuitBreaker(array $config = []): self
     {
-        throw_if(!isset($config['service']), InvalidArgumentException::class, 'Service name is required in circuit breaker configuration');
+        if (!isset($config['service'])) {
+            $config['service'] = $this->getDefaultServiceName();
+        }
         $serviceName = $config['service'];
         $circuitConfig = $config;
         unset($circuitConfig['service']);
@@ -65,6 +67,11 @@ trait CircuitBreakerPlugin
             redisRegistry: app(CircuitBreakerRedisRegistry::class)
         );
         return $this;
+    }
+
+    protected function getDefaultServiceName(): string
+    {
+        return Str::snake(class_basename($this));
     }
 
     public function getCircuitBreaker(): CircuitBreaker
