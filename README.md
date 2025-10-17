@@ -25,7 +25,7 @@ composer require agrovistauk/saloon-circuit-breaker
 **Add the trait to your Saloon Connector:**
 
 ```php
-use Agrovista\SaloonCircuitBreaker\CircuitBreakerPlugin;
+use AgrovistaUK\SaloonCircuitBreaker\CircuitBreakerPlugin;
 use Saloon\Http\Connector;
 
 class MyAPIConnector extends Connector
