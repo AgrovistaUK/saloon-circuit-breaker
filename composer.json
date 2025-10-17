@@ -1,0 +1,57 @@
+{
+    "name": "agrovistauk/saloon-circuit-breaker",
+    "description": "Circuit breaker plugin for Saloon HTTP client to protect against cascading failures",
+    "keywords": ["laravel", "saloon", "circuit-breaker", "http", "resilience", "fault-tolerance"],
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Agrovista UK Development Team",
+            "email": "no-reply@agrovista.co.uk"
+        }
+    ],
+    "require": {
+        "php": "^8.3",
+        "illuminate/cache": "^11.0|^12.0",
+        "illuminate/console": "^11.0|^12.0",
+        "illuminate/support": "^11.0|^12.0",
+        "nesbot/carbon": "^2.68|^3.0",
+        "predis/predis": "^3.2",
+        "saloonphp/saloon": "^3.0",
+        "spatie/laravel-data": "^4.0"
+    },
+    "require-dev": {
+        "larastan/larastan": "^2.0",
+        "mockery/mockery": "^1.5",
+        "orchestra/testbench": "^8.0|^9.0|^10.0",
+        "pestphp/pest": "^4.0",
+        "phpstan/phpstan-deprecation-rules": "^1.2",
+        "phpstan/phpstan-mockery": "^1.1",
+        "phpunit/phpunit": "^12.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "AgrovistaUK\\SaloonCircuitBreaker\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "AgrovistaUK\\SaloonCircuitBreaker\\SaloonCircuitBreakerServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
