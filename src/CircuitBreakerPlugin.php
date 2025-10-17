@@ -64,7 +64,7 @@ trait CircuitBreakerPlugin
         $this->circuitBreaker = new CircuitBreaker(
             service: $serviceName,
             circuitBreakerConfigData: CircuitBreakerConfigData::defaults()->merge($circuitConfig),
-            redisRegistry: app(CircuitBreakerRedisRegistry::class)
+            redisRegistry: null // Defer Redis registry resolution
         );
         return $this;
     }

@@ -10,8 +10,6 @@ use AgrovistaUK\SaloonCircuitBreaker\Console\Commands\SaloonCircuitStatusCommand
 
 class SaloonCircuitBreakerServiceProvider extends ServiceProvider
 {
-    protected $defer = true;
-
     public function register(): void
     {
         $this->app->singleton(CircuitBreakerRedisRegistry::class, function ($app) {
@@ -24,10 +22,5 @@ class SaloonCircuitBreakerServiceProvider extends ServiceProvider
         $this->commands([
             SaloonCircuitStatusCommand::class,
         ]);
-    }
-
-    public function provides(): array
-    {
-        return [CircuitBreakerRedisRegistry::class];
     }
 }
