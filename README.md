@@ -15,7 +15,7 @@ A robust circuit breaker plugin for Saloon HTTP client.
 ## Installation
 
 ```bash
-composer require agrovista/saloon-circuit-breaker
+composer require agrovistauk/saloon-circuit-breaker
 ```
 
 ## Quick Start
