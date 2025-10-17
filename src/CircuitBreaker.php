@@ -25,7 +25,8 @@ class CircuitBreaker
     protected CircuitBreakerStateInterface $circuitBreakerStateInterface;
     protected CircuitBreakerMetricsData $circuitBreakerMetricsData;
 
-    public function __construct(protected string $service, protected CircuitBreakerConfigData $circuitBreakerConfigData, protected ?CircuitBreakerRedisRegistry $redisRegistry = null) {
+    public function __construct(protected string $service, protected CircuitBreakerConfigData $circuitBreakerConfigData, protected CircuitBreakerRedisRegistry $redisRegistry) {
+        $this->registerService();
         $this->loadStateFromCache();
     }
 
@@ -41,7 +42,6 @@ class CircuitBreaker
 
     public function canExecuteRequest(): bool
     {
-        $this->registerService();
         return $this->circuitBreakerStateInterface->canExecuteRequest($this);
     }
 
@@ -197,16 +197,8 @@ class CircuitBreaker
         }
     }
 
-    private function getRedisRegistry(): CircuitBreakerRedisRegistry
-    {
-        if (!$this->redisRegistry) {
-            $this->redisRegistry = app(CircuitBreakerRedisRegistry::class);
-        }
-        return $this->redisRegistry;
-    }
-
     private function registerService(): void
     {
-        $this->getRedisRegistry()->registerService($this->service);
+        $this->redisRegistry->registerService($this->service);
     }
 }
