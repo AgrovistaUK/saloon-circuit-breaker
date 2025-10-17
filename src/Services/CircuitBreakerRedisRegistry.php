@@ -9,47 +9,27 @@ use Illuminate\Support\Facades\Redis;
 
 class CircuitBreakerRedisRegistry
 {
-    private ?Connection $redis = null;
+    private Connection $redis;
     private string $registryKey = CircuitBreakerCacheEnum::ACTIVE_SERVICES->value;
 
-    private function redis(): ?Connection
-    {
-        if (!$this->redis) {
-            try {
-                $this->redis = Redis::connection();
-            } catch (\Exception) {
-                return null;
-            }
-        }
-        return $this->redis;
+    public function __construct() {
+        $this->redis = Redis::connection();
     }
 
-    public function registerService(string $service): void
-    {
-        $redis = $this->redis();
-        if (!$redis) return;
-        
-        $redis->sadd($this->registryKey, $service);
-        $redis->expire($this->registryKey, 86400);
+    public function registerService(string $service): void{
+        $this->redis->sadd($this->registryKey, $service);
+        $this->redis->expire($this->registryKey, 86400);
     }
 
-    public function getActiveServices(): array
-    {
-        $redis = $this->redis();
-        return $redis ? $redis->smembers($this->registryKey) : [];
+    public function getActiveServices(): array {
+        return $this->redis->smembers($this->registryKey);
     }
 
-    public function isServiceRegistered(string $service): bool
-    {
-        $redis = $this->redis();
-        return $redis ? $redis->sismember($this->registryKey, $service) : false;
+    public function isServiceRegistered(string $service): bool {
+        return $this->redis->sismember($this->registryKey, $service);
     }
 
-    public function unregisterService(string $service): void
-    {
-        $redis = $this->redis();
-        if (!$redis) return;
-        
-        $redis->srem($this->registryKey, $service);
+    public function unregisterService(string $service): void {
+        $this->redis->srem($this->registryKey, $service);
     }
 }
