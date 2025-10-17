@@ -1,10 +1,10 @@
 <?php
 
-use Agrovista\SaloonCircuitBreaker\CircuitBreaker;
-use Agrovista\SaloonCircuitBreaker\Data\CircuitBreakerConfigData;
-use Agrovista\SaloonCircuitBreaker\Exceptions\CircuitOpenException;
-use Agrovista\SaloonCircuitBreaker\Enums\CircuitBreakerStateEnum;
-use Agrovista\SaloonCircuitBreaker\Services\CircuitBreakerRedisRegistry;
+use AgrovistaUK\SaloonCircuitBreaker\CircuitBreaker;
+use AgrovistaUK\SaloonCircuitBreaker\Data\CircuitBreakerConfigData;
+use AgrovistaUK\SaloonCircuitBreaker\Exceptions\CircuitOpenException;
+use AgrovistaUK\SaloonCircuitBreaker\Enums\CircuitBreakerStateEnum;
+use AgrovistaUK\SaloonCircuitBreaker\Services\CircuitBreakerRedisRegistry;
 use Illuminate\Support\Facades\Cache;
 
 beforeEach(function () {

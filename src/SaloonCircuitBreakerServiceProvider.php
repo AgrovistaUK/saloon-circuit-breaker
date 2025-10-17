@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Agrovista\SaloonCircuitBreaker;
+namespace AgrovistaUK\SaloonCircuitBreaker;
 
 use Illuminate\Support\ServiceProvider;
-use Agrovista\SaloonCircuitBreaker\Services\CircuitBreakerRedisRegistry;
-use Agrovista\SaloonCircuitBreaker\Console\Commands\SaloonCircuitStatusCommand;
+use AgrovistaUK\SaloonCircuitBreaker\Services\CircuitBreakerRedisRegistry;
+use AgrovistaUK\SaloonCircuitBreaker\Console\Commands\SaloonCircuitStatusCommand;
 
 class SaloonCircuitBreakerServiceProvider extends ServiceProvider
 {

@@ -5,8 +5,8 @@ use Saloon\Http\Faking\MockClient;
 use Saloon\Http\Faking\MockResponse;
 use Illuminate\Support\Facades\Cache;
 use Tests\Support\BasicTestConnector;
-use Agrovista\SaloonCircuitBreaker\Enums\CircuitBreakerStateEnum;
-use Agrovista\SaloonCircuitBreaker\Exceptions\CircuitOpenException;
+use AgrovistaUK\SaloonCircuitBreaker\Enums\CircuitBreakerStateEnum;
+use AgrovistaUK\SaloonCircuitBreaker\Exceptions\CircuitOpenException;
 
 beforeEach(function () {
     MockClient::destroyGlobal();

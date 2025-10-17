@@ -3,7 +3,7 @@
 namespace Tests;
 
 use Orchestra\Testbench\TestCase as BaseTestCase;
-use Agrovista\SaloonCircuitBreaker\SaloonCircuitBreakerServiceProvider;
+use AgrovistaUK\SaloonCircuitBreaker\SaloonCircuitBreakerServiceProvider;
 use Illuminate\Support\Facades\Cache;
 
 abstract class TestCase extends BaseTestCase

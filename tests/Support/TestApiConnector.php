@@ -3,7 +3,7 @@
 namespace Tests\Support;
 
 use Saloon\Http\Connector;
-use Agrovista\SaloonCircuitBreaker\CircuitBreakerPlugin;
+use AgrovistaUK\SaloonCircuitBreaker\CircuitBreakerPlugin;
 
 class TestApiConnector extends Connector
 {

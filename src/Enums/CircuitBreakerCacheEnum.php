@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Agrovista\SaloonCircuitBreaker\Enums;
+namespace AgrovistaUK\SaloonCircuitBreaker\Enums;
 
 enum CircuitBreakerCacheEnum: string
 {

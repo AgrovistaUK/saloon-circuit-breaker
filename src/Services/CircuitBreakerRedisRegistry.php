@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace Agrovista\SaloonCircuitBreaker\Services;
+namespace AgrovistaUK\SaloonCircuitBreaker\Services;
 
-use Agrovista\SaloonCircuitBreaker\Enums\CircuitBreakerCacheEnum;
+use AgrovistaUK\SaloonCircuitBreaker\Enums\CircuitBreakerCacheEnum;
 use Illuminate\Redis\Connections\Connection;
 use Illuminate\Support\Facades\Redis;
 

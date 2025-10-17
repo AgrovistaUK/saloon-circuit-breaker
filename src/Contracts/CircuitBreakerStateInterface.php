@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Agrovista\SaloonCircuitBreaker\Contracts;
+namespace AgrovistaUK\SaloonCircuitBreaker\Contracts;
 
-use Agrovista\SaloonCircuitBreaker\CircuitBreaker;
-use Agrovista\SaloonCircuitBreaker\Enums\CircuitBreakerStateEnum;
+use AgrovistaUK\SaloonCircuitBreaker\CircuitBreaker;
+use AgrovistaUK\SaloonCircuitBreaker\Enums\CircuitBreakerStateEnum;
 
 interface CircuitBreakerStateInterface
 {

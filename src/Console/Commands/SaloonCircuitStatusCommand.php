@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Agrovista\SaloonCircuitBreaker\Console\Commands;
+namespace AgrovistaUK\SaloonCircuitBreaker\Console\Commands;
 
-use Agrovista\SaloonCircuitBreaker\CircuitBreaker;
-use Agrovista\SaloonCircuitBreaker\Data\CircuitBreakerConfigData;
-use Agrovista\SaloonCircuitBreaker\Data\CircuitBreakerStatusData;
-use Agrovista\SaloonCircuitBreaker\Enums\CircuitBreakerCacheEnum;
-use Agrovista\SaloonCircuitBreaker\Services\CircuitBreakerRedisRegistry;
+use AgrovistaUK\SaloonCircuitBreaker\CircuitBreaker;
+use AgrovistaUK\SaloonCircuitBreaker\Data\CircuitBreakerConfigData;
+use AgrovistaUK\SaloonCircuitBreaker\Data\CircuitBreakerStatusData;
+use AgrovistaUK\SaloonCircuitBreaker\Enums\CircuitBreakerCacheEnum;
+use AgrovistaUK\SaloonCircuitBreaker\Services\CircuitBreakerRedisRegistry;
 use Carbon\Carbon;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Cache;

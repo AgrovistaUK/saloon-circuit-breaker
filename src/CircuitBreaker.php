@@ -2,23 +2,23 @@
 
 declare(strict_types=1);
 
-namespace Agrovista\SaloonCircuitBreaker;
+namespace AgrovistaUK\SaloonCircuitBreaker;
 
 use Throwable;
 use Carbon\Carbon;
 use RuntimeException;
 use Illuminate\Support\Facades\Cache;
-use Agrovista\SaloonCircuitBreaker\States\OpenState;
-use Agrovista\SaloonCircuitBreaker\States\ClosedState;
-use Agrovista\SaloonCircuitBreaker\States\HalfOpenState;
-use Agrovista\SaloonCircuitBreaker\Data\CircuitBreakerConfigData;
-use Agrovista\SaloonCircuitBreaker\Data\CircuitBreakerStatusData;
-use Agrovista\SaloonCircuitBreaker\Enums\CircuitBreakerCacheEnum;
-use Agrovista\SaloonCircuitBreaker\Enums\CircuitBreakerStateEnum;
-use Agrovista\SaloonCircuitBreaker\Data\CircuitBreakerMetricsData;
-use Agrovista\SaloonCircuitBreaker\Exceptions\CircuitOpenException;
-use Agrovista\SaloonCircuitBreaker\Services\CircuitBreakerRedisRegistry;
-use Agrovista\SaloonCircuitBreaker\Contracts\CircuitBreakerStateInterface;
+use AgrovistaUK\SaloonCircuitBreaker\States\OpenState;
+use AgrovistaUK\SaloonCircuitBreaker\States\ClosedState;
+use AgrovistaUK\SaloonCircuitBreaker\States\HalfOpenState;
+use AgrovistaUK\SaloonCircuitBreaker\Data\CircuitBreakerConfigData;
+use AgrovistaUK\SaloonCircuitBreaker\Data\CircuitBreakerStatusData;
+use AgrovistaUK\SaloonCircuitBreaker\Enums\CircuitBreakerCacheEnum;
+use AgrovistaUK\SaloonCircuitBreaker\Enums\CircuitBreakerStateEnum;
+use AgrovistaUK\SaloonCircuitBreaker\Data\CircuitBreakerMetricsData;
+use AgrovistaUK\SaloonCircuitBreaker\Exceptions\CircuitOpenException;
+use AgrovistaUK\SaloonCircuitBreaker\Services\CircuitBreakerRedisRegistry;
+use AgrovistaUK\SaloonCircuitBreaker\Contracts\CircuitBreakerStateInterface;
 
 class CircuitBreaker
 {

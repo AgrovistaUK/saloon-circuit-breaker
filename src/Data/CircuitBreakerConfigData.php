@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Agrovista\SaloonCircuitBreaker\Data;
+namespace AgrovistaUK\SaloonCircuitBreaker\Data;
 
 use Spatie\LaravelData\Data;
-use Agrovista\SaloonCircuitBreaker\Enums\CircuitBreakerCacheEnum;
+use AgrovistaUK\SaloonCircuitBreaker\Enums\CircuitBreakerCacheEnum;
 
 class CircuitBreakerConfigData extends Data
 {

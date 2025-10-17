@@ -1,6 +1,6 @@
 <?php
 
-use Agrovista\SaloonCircuitBreaker\Data\CircuitBreakerConfigData;
+use AgrovistaUK\SaloonCircuitBreaker\Data\CircuitBreakerConfigData;
 use Tests\Support\BasicTestConnector;
 
 it('circuit breaker configuration uses sensible default values', function () {

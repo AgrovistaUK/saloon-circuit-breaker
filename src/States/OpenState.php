@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Agrovista\SaloonCircuitBreaker\States;
+namespace AgrovistaUK\SaloonCircuitBreaker\States;
 
-use Agrovista\SaloonCircuitBreaker\CircuitBreaker;
-use Agrovista\SaloonCircuitBreaker\Contracts\CircuitBreakerStateInterface;
-use Agrovista\SaloonCircuitBreaker\Enums\CircuitBreakerStateEnum;
+use AgrovistaUK\SaloonCircuitBreaker\CircuitBreaker;
+use AgrovistaUK\SaloonCircuitBreaker\Contracts\CircuitBreakerStateInterface;
+use AgrovistaUK\SaloonCircuitBreaker\Enums\CircuitBreakerStateEnum;
 
 class OpenState implements CircuitBreakerStateInterface
 {

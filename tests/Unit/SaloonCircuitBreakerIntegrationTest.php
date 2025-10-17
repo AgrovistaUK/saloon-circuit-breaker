@@ -7,9 +7,9 @@ use Tests\Support\TestApiConnector;
 use Saloon\Http\Faking\MockResponse;
 use Tests\Support\CreateUserRequest;
 use Illuminate\Support\Facades\Cache;
-use Agrovista\SaloonCircuitBreaker\CircuitBreaker;
-use Agrovista\SaloonCircuitBreaker\Enums\CircuitBreakerStateEnum;
-use Agrovista\SaloonCircuitBreaker\Exceptions\CircuitOpenException;
+use AgrovistaUK\SaloonCircuitBreaker\CircuitBreaker;
+use AgrovistaUK\SaloonCircuitBreaker\Enums\CircuitBreakerStateEnum;
+use AgrovistaUK\SaloonCircuitBreaker\Exceptions\CircuitOpenException;
 
 beforeEach(function () {
     MockClient::destroyGlobal();

@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Agrovista\SaloonCircuitBreaker\Exceptions;
+namespace AgrovistaUK\SaloonCircuitBreaker\Exceptions;
 
-use Agrovista\SaloonCircuitBreaker\Data\CircuitBreakerStatusData;
+use AgrovistaUK\SaloonCircuitBreaker\Data\CircuitBreakerStatusData;
 use Carbon\Carbon;
 use Exception;
 

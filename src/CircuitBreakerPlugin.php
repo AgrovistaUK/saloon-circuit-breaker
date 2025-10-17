@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace Agrovista\SaloonCircuitBreaker;
+namespace AgrovistaUK\SaloonCircuitBreaker;
 
 use InvalidArgumentException;
 use RuntimeException;
 use Saloon\Http\Response;
 use Saloon\Http\PendingRequest;
-use Agrovista\SaloonCircuitBreaker\Data\CircuitBreakerConfigData;
-use Agrovista\SaloonCircuitBreaker\Exceptions\CircuitOpenException;
-use Agrovista\SaloonCircuitBreaker\Enums\CircuitBreakerStateEnum;
-use Agrovista\SaloonCircuitBreaker\Services\CircuitBreakerRedisRegistry;
+use AgrovistaUK\SaloonCircuitBreaker\Data\CircuitBreakerConfigData;
+use AgrovistaUK\SaloonCircuitBreaker\Exceptions\CircuitOpenException;
+use AgrovistaUK\SaloonCircuitBreaker\Enums\CircuitBreakerStateEnum;
+use AgrovistaUK\SaloonCircuitBreaker\Services\CircuitBreakerRedisRegistry;
 
 trait CircuitBreakerPlugin
 {

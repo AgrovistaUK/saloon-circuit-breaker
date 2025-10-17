@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Agrovista\SaloonCircuitBreaker\Data;
+namespace AgrovistaUK\SaloonCircuitBreaker\Data;
 
 use Carbon\Carbon;
 use Spatie\LaravelData\Data;
